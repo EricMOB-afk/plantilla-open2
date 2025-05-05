@@ -1,0 +1,17 @@
+<div class="product-list">
+  <div *ngFor="let product of products" class="product-card">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{ product.title }}</mat-card-title>
+        <mat-card-subtitle>{{ product.category }}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image [src]="product.image" alt="{{ product.title }}">
+      <mat-card-content>
+        <p>{{ product.description }}</p>
+        <p class="price">{{ product.price.toString() | translate }}</p>
+        <p>{{ 'product.rate' | translate }}: {{ product.rating?.rate }}</p>
+        <p>{{ 'product.count' | translate }}: {{ product.rating?.count }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
